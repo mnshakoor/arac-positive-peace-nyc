@@ -6,7 +6,7 @@ category: Diaspora Communities
 author: m-nuri-shakoor
 tags: [national puerto rican day parade, puerto rico, fifth avenue, diaspora, heritage, cultural diplomacy, civic engagement, positive peace]
 pillars: [good-relations-with-neighbours, acceptance-of-the-rights-of-others, high-levels-of-human-capital]
-featured: true
+featured: false
 lead_video: true            # show the main video at the top instead of a cover image
 
 event:

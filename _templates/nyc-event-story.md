@@ -37,6 +37,7 @@ image_credit: Alla Bevzenko
 event:
   name: "Official event name"
   date: 2026-11-01               # YYYY-MM-DD
+  # when: June 2026              # use instead of date if the exact day is not known (Google event data needs a date)
   # end_date: 2026-11-02
   time: "12:00 PM to 6:00 PM"
   venue: "Venue name"
