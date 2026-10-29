@@ -24,6 +24,7 @@ programs: []                     # mind-youth-project, ny-urban-art-project
 tags: [festival, queens]
 pillars: [acceptance-of-the-rights-of-others, good-relations-with-neighbours]   # ids from _data/pillars.yml
 featured: false                  # true puts it in the home page hero
+# lead_video: true               # Uncomment to show the first video at the top instead of the cover photo
 # published: false               # Uncomment to keep it off the live site while drafting
 
 # Cover photo: landscape JPG, about 1600 to 2400 px wide, under about 1.5 MB.

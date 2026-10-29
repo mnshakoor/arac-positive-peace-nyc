@@ -17,15 +17,17 @@ description: Photo collections, video and press assets from ARAC Community NYC c
     <div class="section-head"><div><div class="section-label">Photography</div><h2 class="section-title">Photo collections</h2></div></div>
     {%- assign shown = 0 %}
     {%- for s in stories %}
-      {%- if s.image or s.gallery.size > 0 %}
+      {%- comment %} Only photos stored on this site count; a YouTube thumbnail is not a photo collection. {% endcomment %}
+      {%- assign own_cover = false %}{% if s.image and s.image contains "/assets/" %}{% unless s.image contains "://" %}{% assign own_cover = true %}{% endunless %}{% endif %}
+      {%- if own_cover or s.gallery.size > 0 %}
       {%- assign shown = shown | plus: 1 %}
       <div class="collection">
         <div class="collection-head">
           <a href="{{ s.url | relative_url }}">{{ s.title }}</a>
-          <span>{{ s.date | date: "%B %-d, %Y" }} · {% if s.image %}{{ s.gallery | size | plus: 1 }}{% else %}{{ s.gallery | size }}{% endif %} photos</span>
+          <span>{{ s.date | date: "%B %-d, %Y" }} · {% if own_cover %}{{ s.gallery | size | plus: 1 }}{% else %}{{ s.gallery | size }}{% endif %} photos</span>
         </div>
         <div class="thumb-grid">
-          {%- if s.image %}
+          {%- if own_cover %}
           <figure>
             <a href="{{ s.image | relative_url }}" target="_blank" rel="noopener"><div class="media">{% include media.html src=s.image alt=s.image_alt %}</div></a>
             {%- if s.image_credit %}<div class="credit">Photo: {{ s.image_credit }}</div>{% endif %}

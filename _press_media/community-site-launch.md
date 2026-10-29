@@ -8,7 +8,7 @@ contributors: [alla-bevzenko, furaha-moye]
 tags: [launch, positive peace, community media, new york city]
 pillars: [free-flow-of-information, acceptance-of-the-rights-of-others, good-relations-with-neighbours]
 programs: [mind-youth-project, ny-urban-art-project]
-featured: true
+featured: false
 sources:
   - label: Institute for Economics & Peace
     url: https://www.economicsandpeace.org

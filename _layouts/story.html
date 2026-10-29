@@ -30,7 +30,22 @@ layout: default
   </div>
 </header>
 
-{%- if page.image %}
+{%- if page.lead_video and page.videos.size > 0 %}
+{%- assign v = page.videos.first %}
+<figure class="article-cover video-embed">
+  <div class="frame-wrap" style="box-shadow:0 20px 60px rgba(0,0,0,0.25);border-radius:8px;">
+    {%- if v.youtube %}
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ v.youtube }}?rel=0" title="{{ v.title | escape }}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    {%- elsif v.vimeo %}
+    <iframe src="https://player.vimeo.com/video/{{ v.vimeo }}?dnt=1" title="{{ v.title | escape }}" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {%- elsif v.file %}
+    <video controls preload="metadata"{% if v.poster %} poster="{{ v.poster | relative_url }}"{% endif %}><source src="{{ v.file | relative_url }}"></video>
+    {%- endif %}
+  </div>
+  <figcaption class="fig-caption">{{ v.title }}{% if v.credit %} <span class="credit">Video: {{ v.credit }}</span>{% endif %}</figcaption>
+</figure>
+{%- assign video_offset = 1 %}
+{%- elsif page.image %}
 <figure class="article-cover">
   <div class="media">{% include media.html src=page.image alt=page.image_alt eager=true %}</div>
   {%- if page.image_caption or page.image_credit %}
@@ -65,11 +80,13 @@ layout: default
   </div>
 </article>
 
-{%- if page.videos.size > 0 %}
+{%- assign video_offset = video_offset | default: 0 %}
+{%- assign more_videos = page.videos.size | minus: video_offset %}
+{%- if more_videos > 0 %}
 <section class="media-section" aria-labelledby="video-heading">
-  <div class="media-section-head"><h2 id="video-heading">Video</h2><span>{{ page.videos | size }} {% if page.videos.size == 1 %}clip{% else %}clips{% endif %}</span></div>
+  <div class="media-section-head"><h2 id="video-heading">{% if video_offset > 0 %}More Video{% else %}Video{% endif %}</h2><span>{{ more_videos }} {% if more_videos == 1 %}clip{% else %}clips{% endif %}</span></div>
   <div class="video-grid">
-    {%- for v in page.videos %}
+    {%- for v in page.videos offset: video_offset %}
     <figure class="video-embed">
       <div class="frame-wrap">
         {%- if v.youtube %}
