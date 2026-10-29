@@ -375,3 +375,14 @@ footer.site-footer { background: var(--charcoal); border-top: 1px solid rgba(139
 .video-embed.short { max-width: 340px; margin-left: auto; margin-right: auto; }
 .video-embed.short .frame-wrap { padding-top: 177.78%; }
 .video-embed.short .fig-caption { text-align: center; }
+
+/* ── THINK INVITATION (end of every story, _includes/think-plug.html) ── */
+.think-plug { display: flex; gap: 1.6rem; align-items: flex-start; background: var(--charcoal-mid); border-left: 3px solid var(--sage); border-radius: 8px; padding: 1.8rem 2rem; margin-bottom: 2.4rem; position: relative; overflow: hidden; }
+.think-plug::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 90% 20%, rgba(168,184,112,0.16) 0%, transparent 65%); pointer-events: none; }
+.think-plug > * { position: relative; }
+.think-plug-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; letter-spacing: 0.08em; color: #fff; line-height: 1; padding-top: 0.2rem; }
+.think-plug .kicker { color: var(--sage-muted); }
+.think-plug h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; color: #fff; line-height: 1.2; margin-top: 0.4rem; }
+.think-plug p { font-size: 0.94rem; line-height: 1.75; color: rgba(255,255,255,0.75); margin: 0.7rem 0 1.2rem; }
+.think-plug p a { color: var(--olive-light); }
+@media (max-width: 680px) { .think-plug { flex-direction: column; gap: 0.6rem; padding: 1.5rem 1.4rem; } }

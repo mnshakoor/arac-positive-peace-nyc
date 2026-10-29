@@ -127,6 +127,7 @@ layout: default
 {%- endif %}
 
 <div class="article-foot">
+  {%- unless page.think_plug == false %}{% include think-plug.html %}{% endunless %}
   {%- if page.pillars.size > 0 %}
   <div class="foot-block">
     <h2>Pillars of Positive Peace in this story</h2>

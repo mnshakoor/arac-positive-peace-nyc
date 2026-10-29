@@ -59,6 +59,7 @@ For press releases and announcements, use `_templates/press-media-item.md`, the 
 | Site name, description, links to ARAC, THINK, newsletter, donate | `_config.yml` |
 | Colors and fonts | the `:root` block at the top of `assets/css/site.css` |
 | Header or footer | `_includes/nav.html`, `_includes/footer.html` |
+| THINK invitation at the end of every story | `_includes/think-plug.html` (add `think_plug: false` to a story to leave it off) |
 
 A hand-built HTML page (like the STRATCOM field reports on the main site) can be added as-is: drop it in a folder, for example `nyc-events/special-report/index.html`, and it is published at that address unchanged.
 
