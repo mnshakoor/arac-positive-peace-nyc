@@ -6,7 +6,7 @@ category: Diaspora Communities
 author: m-nuri-shakoor
 tags: [dominican day parade, zohran mamdani, andrew cuomo, curtis sliwa, civic engagement, due process, diaspora, positive peace]
 pillars: [well-functioning-government, acceptance-of-the-rights-of-others, high-levels-of-human-capital, good-relations-with-neighbours]
-featured: true
+featured: false
 lead_video: true            # show the video at the top instead of the cover image
 
 # Cover: the video's YouTube thumbnail. Replace with a still uploaded to
