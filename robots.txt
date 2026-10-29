@@ -1,0 +1,10 @@
+---
+layout: null
+---
+# community.arac-international.org
+# ARAC International Inc. community media site. All crawlers are welcome.
+
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

@@ -1,77 +1,82 @@
 # ARAC Community NYC
 
-**https://community.arac-international.org** · Community media site of ARAC International Inc.
+**https://community.arac-international.org** · the community media site of ARAC International Inc.
 
-The site publishes photo and video stories from New York City cultural events, media and digital literacy resources, and coverage of the city's diaspora communities. It serves three commitments:
+Hosted on **GitHub Pages**, the same way as [arac-international.org](https://arac-international.org) (`mnshakoor/arac-international-main`), and styled to match it: cream and sage grounds, charcoal navigation, Cormorant Garamond headlines, DM Sans text, and the ARAC logo.
 
-1. **Positive Peace in the city.** Coverage of cultural awareness events sponsored by the City of New York and community partners, tagged against the eight Pillars of Positive Peace defined by the Institute for Economics & Peace (IEP). This forms part of ARAC's Positive Peace mandate under its IEP Positive Peace Ambassador.
-2. **Media and digital literacy for all.** Links into [THINK](https://think.arac-international.org) services and toolkits, and advocacy for community access to them.
-3. **Understanding diaspora communities.** Coverage of events within New York's international communities and of gatherings that promote unity and goodwill.
+There is nothing to install and no build step. GitHub Pages turns the files in this repository into the website each time a change is committed, usually within one or two minutes.
+
+## Purpose
+
+1. **Positive Peace in the city.** Promote and cover cultural awareness events sponsored by the City of New York that embody the eight Pillars of Positive Peace (Institute for Economics & Peace), as part of ARAC's Positive Peace Ambassador mandate.
+2. **Media and digital literacy.** Advocate for critical thinking, digital and AI literacy through [THINK](https://think.arac-international.org), so no community is left behind.
+3. **Diaspora and community understanding.** Cover NYC diaspora events and gatherings that build unity and goodwill.
 
 ## Site map
 
-| Path | Purpose |
+| Address | What it is | Where it comes from |
+| --- | --- | --- |
+| `/` | Home page | `index.html` |
+| `/nyc-events/` | Event stories (photo and video) | one Markdown file per story in `_nyc_events/` |
+| `/press-media/` | Press releases, announcements, media coverage | one Markdown file per item in `_press_media/` |
+| `/assets/` | Media Library: every story's photos and videos, press kit | built automatically from the stories; photo files live in `assets/` |
+| `/positive-peace/` | The eight Pillars, with the stories tagged to each | `positive-peace/index.html` and `_data/pillars.yml` |
+| `/about/` | Programs, team roster, editorial standards | `about/index.html` and `_data/team.yml` |
+| `/feed.xml`, `/sitemap.xml`, `/robots.txt` | RSS feed and search engine files | generated automatically |
+
+## Publishing a story (in the browser, no software needed)
+
+1. **Upload the photos.** On GitHub, open `assets/nyc-events/`, choose **Add file → Upload files**, and upload into a new folder named after the story, for example `assets/nyc-events/diwali-jackson-heights-2026/`. (To create the folder, type the folder name followed by `/` in the file name box.)
+   - Use landscape JPGs about 1600 to 2400 pixels wide and under about 1.5 MB each.
+   - Remove GPS location data before uploading, especially for photos of young people.
+2. **Create the story.** Open `_templates/nyc-event-story.md`, copy all of it, then go to `_nyc_events/`, choose **Add file → Create new file**, name it `diwali-jackson-heights-2026.md`, and paste.
+   - The file name becomes the web address: `community.arac-international.org/nyc-events/diwali-jackson-heights-2026/`
+   - Use lowercase words joined by hyphens, no spaces.
+3. **Fill in the fields** at the top (title, description, date, photos, event details) and write the story below the second `---` line. Delete optional blocks you do not need.
+4. **Commit.** The story appears on the site, the NYC Events page, the home page, the Media Library, the sitemap and the RSS feed in a minute or two.
+
+For press releases and announcements, use `_templates/press-media-item.md`, the `_press_media/` folder, and `assets/press-media/`.
+
+**Good to know**
+
+- **Dates:** a story whose `date` is in the future is hidden until the site is next rebuilt on or after that date. Use the publication date, not the event date.
+- **Drafts:** add `published: false` to keep a story off the live site while you work on it.
+- **Featured:** add `featured: true` to put a story in the home page hero.
+- **Credits:** `author`, `photographers` and `contributors` use the short names (slugs) in `_data/team.yml`, so each credit links to the person on the About page.
+- **Video:** put long video on YouTube or Vimeo and paste the video ID. Only short clips belong in the repository.
+- **Formatting:** the story body uses Markdown: `## Heading`, `**bold**`, `[link text](https://...)`, `> quote`, and `- list item`.
+
+## Everyday edits
+
+| To change | Edit |
 | --- | --- |
-| `/` | Front page: lead story, mandate, Pillars, THINK band, programs, newsroom |
-| `/nyc-events` and `/nyc-events/<slug>` | Event coverage, photo stories and video |
-| `/press-media` and `/press-media/<slug>` | Press releases, announcements, media coverage |
-| `/assets` | Media Library: photo collections and video gathered from every story, press kit, usage terms |
-| `/positive-peace` | The eight Pillars, with the stories tagged to each |
-| `/digital-literacy` | Media, digital and AI literacy, linked to THINK |
-| `/about` | Programs (MIND Youth Project, NY Urban Art Project), team roster, editorial standards |
-| `/feed.xml`, `/sitemap.xml`, `/robots.txt` | Feeds and crawler files, generated from content |
+| A team member, role or program membership | `_data/team.yml` |
+| Program names or descriptions | `_data/programs.yml` |
+| Top menu | `_data/nav.yml` |
+| Pillar descriptions | `_data/pillars.yml` |
+| Site name, description, links to ARAC, THINK, newsletter, donate | `_config.yml` |
+| Colors and fonts | the `:root` block at the top of `assets/css/site.css` |
+| Header or footer | `_includes/nav.html`, `_includes/footer.html` |
 
-## Publishing a story
+A hand-built HTML page (like the STRATCOM field reports on the main site) can be added as-is: drop it in a folder, for example `nyc-events/special-report/index.html`, and it is published at that address unchanged.
 
-Stories are Markdown files. No database or CMS is required.
+## Search engines and social media
 
-1. Copy `content/nyc-events/_template.md` (or `content/press-media/_template.md`) to `content/<section>/<slug>.md`. The slug becomes the URL, so use lowercase words joined by hyphens.
-2. Put photos in `public/media/<section>/<slug>/` (see `public/media/README.md` for size, format and privacy rules).
-3. Fill in the frontmatter. Credit people by their slug from `src/lib/team.ts`.
-4. Run `npm test`. It fails on a missing alt text, an unknown team member, an unknown Pillar, a missing photo file or a bad date.
-5. Commit and push. Vercel builds and publishes.
+Every page carries a title, description, canonical address, and Open Graph and X (Twitter) card tags, so links shared on Facebook, LinkedIn, WhatsApp and X show a large photo preview. A story's cover photo is its share image; pages without one use the ARAC logo.
 
-Set `draft: true` to preview a story with `npm run dev` without publishing it. Set `featured: true` to pin it to the front page.
+For Google, each story also publishes structured data: `NewsArticle` with author and photographer credits, `Event` (venue, borough, date, sponsor) when the story has an event block, `VideoObject` for YouTube video, and breadcrumbs. `sitemap.xml` lists every page with its photos and videos, and `robots.txt` points crawlers to it.
 
-To add or change a team member, edit `src/lib/team.ts`.
+## One-time setup
 
-## Search and social sharing
+1. **Turn on GitHub Pages:** repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder `/ (root)`.
+2. **Custom domain:** the `CNAME` file already contains `community.arac-international.org`. At the DNS provider for `arac-international.org`, add a `CNAME` record: name `community`, value `mnshakoor.github.io`. Then in **Settings → Pages**, confirm the custom domain and tick **Enforce HTTPS** once the certificate is issued.
+3. **Google Search Console:** add `https://community.arac-international.org` as a property, verify it (the DNS method needs no site change), and submit `https://community.arac-international.org/sitemap.xml`.
 
-Every page is statically generated. What is built in:
-
-- **Metadata:** unique title, description and canonical URL per page; Open Graph and X `summary_large_image` cards; `article:*` tags on stories.
-- **Share images:** each story gets a 1200x630 card generated at build time. If the cover is a JPEG or PNG, the card uses the photo with the headline over it.
-- **Structured data (JSON-LD):** `NGO` and `WebSite` site-wide; `NewsArticle` with author and photographer credits on every story; `Event` (venue, borough, date, sponsor) when a story has an `event` block; `VideoObject` for embedded video; `ImageObject` with photographer credit and license page on the Media Library; `BreadcrumbList` throughout.
-- **Sitemap** with image and video entries; **RSS** with cover images; `robots.txt` that blocks Vercel preview deployments from indexing.
-- **Performance:** responsive AVIF and WebP images, self-hosted fonts, no third-party scripts. Share buttons are plain links.
-
-## Development
+## Previewing on your own computer (optional)
 
 ```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run verify     # lint, typecheck, tests, production build
+bundle install
+bundle exec jekyll serve
 ```
 
-Requires Node 20.9 or later. This project uses Next.js 16; read `AGENTS.md` before changing framework code.
-
-## Deployment (Vercel)
-
-1. Import `mnshakoor/arac-positive-peace-nyc` into Vercel. The framework is detected automatically.
-2. Add the domain `community.arac-international.org` to the project. At the DNS host for `arac-international.org`, create a `CNAME` record for `community` pointing to the target Vercel shows (usually `cname.vercel-dns.com`).
-3. Optional environment variables:
-
-| Variable | Use |
-| --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Override the canonical origin. Defaults to `https://community.arac-international.org` |
-| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console HTML-tag token |
-| `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Bing Webmaster Tools token |
-
-4. In Google Search Console, add the property, verify it, and submit `https://community.arac-international.org/sitemap.xml`.
-
-## Open items before launch
-
-- **Brand alignment.** The palette and type follow the ARAC and Quanta Analytica family (obsidian and gold, Playfair Display, IBM Plex). They were not checked against the live arac-international.org, which could not be reached during the build. Adjust the tokens in `src/app/globals.css` (`:root` only) if the main site differs.
-- **Official logo.** `public/brand/` holds a placeholder eight-segment mark. Replace `arac-mark.svg`, `arac-mark-192.png`, `arac-mark-512.png`, `src/app/icon.svg` and `src/app/apple-icon.png` with the official ARAC logo. Google uses the 512 px file as the organization logo.
-- **Social profiles and contact email.** Fill in `site.social` and `site.contactEmail` in `src/lib/site.ts`. Empty values are left out of the footer and structured data.
-- **Roster check.** Confirm name spellings in `src/lib/team.ts` (for example Igor Ktodoma, Loiba Maria, Kevin O'tey).
+Then open http://localhost:4000. This uses the same Jekyll version as GitHub Pages.

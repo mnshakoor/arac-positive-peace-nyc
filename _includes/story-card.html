@@ -1,0 +1,21 @@
+{%- assign s = include.story -%}
+{%- assign author = site.data.team | where: "slug", s.author | first -%}
+<article class="story-card">
+  <a href="{{ s.url | relative_url }}">
+    <div class="media">
+      {% include media.html src=s.image alt=s.image_alt %}
+      {%- if s.videos.size > 0 or s.gallery.size > 0 %}
+      <div class="media-badges">
+        {%- if s.videos.size > 0 %}<span>Video</span>{% endif %}
+        {%- if s.gallery.size > 0 %}<span>{{ s.gallery | size }} Photos</span>{% endif %}
+      </div>
+      {%- endif %}
+    </div>
+    <div class="story-card-body">
+      <div class="kicker">{{ s.category }}{% if s.event.borough %} · {{ s.event.borough }}{% endif %}</div>
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.description }}</p>
+      <div class="story-meta">{% if author %}{{ author.name }} · {% endif %}<time datetime="{{ s.date | date: '%Y-%m-%d' }}">{{ s.date | date: "%b %-d, %Y" }}</time></div>
+    </div>
+  </a>
+</article>

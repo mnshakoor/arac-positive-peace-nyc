@@ -1,0 +1,40 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+{%- assign stories = site.nyc_events | concat: site.press_media | sort: "date" | reverse %}
+{%- assign newest = stories.first.updated | default: stories.first.date | default: site.time %}
+{%- assign pages = site.html_pages | where_exp: "p", "p.noindex != true" %}
+{%- for p in pages %}
+  <url>
+    <loc>{{ p.url | absolute_url }}</loc>
+    <lastmod>{{ newest | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>{% if p.url == "/" or p.url == "/nyc-events/" %}daily{% else %}weekly{% endif %}</changefreq>
+    <priority>{% if p.url == "/" %}1.0{% else %}0.8{% endif %}</priority>
+  </url>
+{%- endfor %}
+{%- for s in stories %}
+  <url>
+    <loc>{{ s.url | absolute_url }}</loc>
+    <lastmod>{{ s.updated | default: s.date | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    {%- if s.image %}
+    <image:image><image:loc>{{ s.image | absolute_url }}</image:loc></image:image>
+    {%- endif %}
+    {%- for g in s.gallery %}
+    <image:image><image:loc>{{ g.src | absolute_url }}</image:loc></image:image>
+    {%- endfor %}
+    {%- for v in s.videos %}{% if v.youtube %}
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/{{ v.youtube }}/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>{{ v.title | xml_escape }}</video:title>
+      <video:description>{{ v.description | default: s.description | xml_escape }}</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/{{ v.youtube }}</video:player_loc>
+      <video:publication_date>{{ v.date | default: s.date | date_to_xmlschema }}</video:publication_date>
+    </video:video>
+    {%- endif %}{% endfor %}
+  </url>
+{%- endfor %}
+</urlset>

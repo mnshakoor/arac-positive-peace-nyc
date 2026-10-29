@@ -1,0 +1,11 @@
+# Top navigation. Edit labels or order here; every page updates.
+- label: NYC Events
+  url: /nyc-events/
+- label: Press & Media
+  url: /press-media/
+- label: Media Library
+  url: /assets/
+- label: Positive Peace
+  url: /positive-peace/
+- label: About
+  url: /about/

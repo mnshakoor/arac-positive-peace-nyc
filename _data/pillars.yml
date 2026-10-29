@@ -1,0 +1,45 @@
+# The eight Pillars of Positive Peace (Institute for Economics & Peace).
+# IEP defines Positive Peace as the attitudes, institutions and structures that
+# create and sustain peaceful societies. `summary` and `local` are ARAC
+# paraphrases for a general audience, not IEP text.
+# Stories tag pillars with the `id` values below.
+
+- id: well-functioning-government
+  name: Well-Functioning Government
+  summary: Institutions that deliver public services, uphold the rule of law and keep public trust.
+  local: Civic programs, public agencies and community boards that residents can reach and rely on.
+
+- id: sound-business-environment
+  name: Sound Business Environment
+  summary: Economic conditions in which enterprise, employment and the private sector can grow.
+  local: Small businesses, street vendors and neighborhood markets that anchor diaspora communities.
+
+- id: equitable-distribution-of-resources
+  name: Equitable Distribution of Resources
+  summary: Fair access to essentials such as health, education and income opportunity.
+  local: Who can reach libraries, broadband, arts programming and youth services across the five boroughs.
+
+- id: acceptance-of-the-rights-of-others
+  name: Acceptance of the Rights of Others
+  summary: Formal protections and informal norms that respect the rights and freedoms of all groups.
+  local: Cultural festivals and heritage events where communities share traditions in public space.
+
+- id: good-relations-with-neighbours
+  name: Good Relations with Neighbours
+  summary: Peaceful relations between communities within a country and with neighboring states.
+  local: Interfaith, intercultural and block-level events that build ties between neighbors.
+
+- id: free-flow-of-information
+  name: Free Flow of Information
+  summary: Free and independent media and broad access to accurate information.
+  local: Media, digital and AI literacy so residents can find, test and share reliable information.
+
+- id: high-levels-of-human-capital
+  name: High Levels of Human Capital
+  summary: A skilled, educated and healthy population able to contribute to society.
+  local: Youth mentorship, workshops and creative training that build skills and confidence.
+
+- id: low-levels-of-corruption
+  name: Low Levels of Corruption
+  summary: Accountable institutions in which public resources are used for their intended purpose.
+  local: Transparent, documented community work with sources that readers can check.

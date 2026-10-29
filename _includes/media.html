@@ -1,0 +1,9 @@
+{%- comment -%}
+  Photo box. Usage: {% include media.html src=story.image alt=story.image_alt eager=true %}
+  With no photo it shows the ARAC logo on the sage panel.
+{%- endcomment -%}
+{%- if include.src -%}
+<img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}"{% unless include.eager %} loading="lazy"{% endunless %} decoding="async">
+{%- else -%}
+<div class="media-fallback" aria-hidden="true"><img src="{{ '/assets/brand/arac-logo1.PNG' | relative_url }}" alt="" loading="lazy"></div>
+{%- endif -%}

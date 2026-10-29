@@ -1,0 +1,152 @@
+# ARAC Community NYC roster.
+# Stories credit people by `slug` (author, photographers, contributors).
+# To add someone: copy a block, give them a unique slug (lowercase-with-hyphens).
+# Optional: add `photo: /assets/team/<slug>.jpg` to show a headshot instead of initials.
+# group: editorial | contributors | advocates | board
+# programs: mind-youth-project | ny-urban-art-project
+
+- slug: m-nuri-shakoor
+  name: M. Nuri Shakoor
+  initials: MS
+  roles: [Positive Peace Ambassador, Data Journalist, Volunteer Researcher, Community Educator]
+  programs: []
+  group: editorial
+  url: https://mnshakoor.com
+
+- slug: alla-bevzenko
+  name: Alla Bevzenko
+  initials: AB
+  roles: [Volunteer Photographer, Creative Director, Content Creator]
+  programs: []
+  group: editorial
+
+- slug: furaha-moye
+  name: Furaha Moye
+  initials: FM
+  roles: [Volunteer Contributor, Creative Director, Board Member]
+  programs: [ny-urban-art-project, mind-youth-project]
+  group: editorial
+  board: true
+
+- slug: igor-ktodoma
+  name: Igor Ktodoma
+  initials: IK
+  roles: [Volunteer Content Creator, Photographer]
+  programs: [mind-youth-project]
+  group: contributors
+
+- slug: mel-wright
+  name: Mel Wright
+  initials: MW
+  roles: [Volunteer Contributor, Photographer]
+  programs: [mind-youth-project]
+  group: contributors
+
+- slug: dez-santana
+  name: Dez Santana
+  initials: DS
+  roles: [Volunteer Contributor, Photographer]
+  programs: [mind-youth-project, ny-urban-art-project]
+  group: contributors
+
+- slug: tomiko-sanchez
+  name: Tomiko Sanchez
+  initials: TS
+  roles: [Volunteer Contributor]
+  programs: [mind-youth-project, ny-urban-art-project]
+  group: contributors
+
+- slug: wendell-mike-kennedy
+  name: Wendell Mike Kennedy
+  initials: WK
+  roles: [Volunteer Contributor, Photographer]
+  programs: [ny-urban-art-project]
+  group: contributors
+
+- slug: sarkis-kesayev
+  name: Sarkis Kesayev
+  initials: SK
+  roles: [Volunteer Contributor, Photographer]
+  programs: [mind-youth-project]
+  group: contributors
+
+- slug: yvette-figueroa
+  name: Yvette Figueroa
+  initials: YF
+  roles: [Volunteer Contributor]
+  programs: [ny-urban-art-project, mind-youth-project]
+  group: contributors
+
+- slug: loiba-maria
+  name: Loiba Maria
+  initials: LM
+  roles: [Volunteer Contributor]
+  programs: [ny-urban-art-project]
+  group: contributors
+
+- slug: millie-carbajal
+  name: Millie Carbajal
+  initials: MC
+  roles: [Volunteer Contributor]
+  programs: [ny-urban-art-project]
+  group: contributors
+
+- slug: celi-padilla
+  name: Celi Padilla
+  initials: CP
+  roles: [Volunteer Contributor]
+  programs: [ny-urban-art-project]
+  group: contributors
+
+- slug: quincy-france
+  name: Quincy France
+  initials: QF
+  roles: [Volunteer]
+  programs: [ny-urban-art-project]
+  group: contributors
+
+- slug: anwar-hafez
+  name: Anwar Hafez
+  initials: AH
+  roles: [Volunteer]
+  programs: [ny-urban-art-project]
+  group: contributors
+
+- slug: danny-kavadlo
+  name: Danny Kavadlo
+  initials: DK
+  roles: [Advocate]
+  programs: [ny-urban-art-project]
+  group: advocates
+
+- slug: kevin-suber
+  name: Kevin Suber
+  initials: KS
+  roles: [Advocate, Board Member]
+  programs: []
+  group: board
+  board: true
+
+- slug: melvin-jackson
+  name: Melvin Jackson
+  initials: MJ
+  roles: [Advocate, Board Member]
+  programs: []
+  group: board
+  board: true
+
+- slug: anthony-whitted
+  name: Anthony Whitted
+  initials: AW
+  roles: [Board Member]
+  programs: []
+  group: board
+  board: true
+
+- slug: kevin-otey
+  name: Kevin O'tey
+  initials: KO
+  roles: [Board Member]
+  programs: []
+  group: board
+  board: true

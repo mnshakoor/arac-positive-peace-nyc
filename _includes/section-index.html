@@ -1,0 +1,64 @@
+{%- comment -%} Listing page for a story collection. Usage: {% include section-index.html collection="nyc_events" %} {%- endcomment -%}
+{%- assign stories = site[include.collection] | sort: "date" | reverse -%}
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span>/</span>{{ page.title }}</div>
+    <div class="eyebrow">{{ page.eyebrow }}</div>
+    <h1 class="page-title">{{ page.headline }}</h1>
+    <p class="page-lead">{{ page.description }}</p>
+  </div>
+</header>
+<section class="section">
+  <div class="section-inner">
+    {%- if stories.size > 0 %}
+      {% include story-lead.html story=stories.first %}
+      {%- if stories.size > 1 %}
+      <div class="story-grid">
+        {%- for s in stories offset: 1 %}{% include story-card.html story=s %}{% endfor %}
+      </div>
+      {%- endif %}
+    {%- else %}
+    <div class="empty-state">
+      <h3>First stories are on the way</h3>
+      <p>Our volunteer photographers and contributors are preparing the first stories for this section. Follow the <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a> or the <a href="{{ site.links.newsletter }}">ARAC newsletter</a> to hear when they publish.</p>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "url": "{{ page.url | absolute_url }}",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {%- for s in stories %}
+          { "@type": "ListItem", "position": {{ forloop.index }}, "url": "{{ s.url | absolute_url }}" }{% unless forloop.last %},{% endunless %}
+          {%- endfor %}
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+        { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+      ]
+    }
+  ]
+}
+</script>
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>Have a story or event for us?</h2>
+      <p>Send event tips, press inquiries and volunteer interest to ARAC International.</p>
+    </div>
+    <a class="btn-white" href="mailto:{{ site.organization.email }}?subject=ARAC%20Community%20NYC">Contact Us</a>
+  </div>
+</section>

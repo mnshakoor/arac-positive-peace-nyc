@@ -1,0 +1,198 @@
+---
+title: ARAC Community NYC
+description: Photo and video stories from New York City cultural events that build Positive Peace, coverage of the city's diaspora communities, and media and digital literacy through THINK. A community media initiative of ARAC International Inc.
+---
+{%- assign events = site.nyc_events | sort: "date" | reverse -%}
+{%- assign press = site.press_media | sort: "date" | reverse -%}
+{%- assign everything = site.nyc_events | concat: site.press_media | sort: "date" | reverse -%}
+{%- assign featured = everything | where: "featured", true | first | default: everything.first -%}
+
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div>
+      <div class="eyebrow">ARAC International · Positive Peace in New York City</div>
+      <h1 class="hero-headline">Stories of a city<br><em>building peace together.</em></h1>
+      <blockquote class="hero-quote">Photo and video coverage of New York City's cultural events and diaspora communities, connected to the eight Pillars of Positive Peace, with media and digital literacy for every neighborhood.</blockquote>
+      <div class="hero-actions">
+        <a href="{{ '/nyc-events/' | relative_url }}" class="btn-primary">NYC Event Stories</a>
+        <a href="{{ site.links.think }}" class="btn-outline">THINK Literacy</a>
+      </div>
+    </div>
+    {%- if featured %}
+    <a class="hero-feature" href="{{ featured.url | relative_url }}">
+      <div class="media">{% include media.html src=featured.image alt=featured.image_alt eager=true %}</div>
+      <div class="hero-feature-body">
+        <div class="kicker">Featured · {{ featured.category }}</div>
+        <h2>{{ featured.title }}</h2>
+        <p>{{ featured.description }}</p>
+      </div>
+    </a>
+    {%- endif %}
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#8b9a5b"/></svg>
+</section>
+
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    {%- for round in (1..2) %}
+    <span class="ticker-item">Positive Peace <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Cultural Heritage <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Diaspora Communities <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Unity &amp; Goodwill <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Media &amp; Digital Literacy <span class="ticker-dot"></span></span>
+    <span class="ticker-item">AI Literacy <span class="ticker-dot"></span></span>
+    <span class="ticker-item">MIND Youth Project <span class="ticker-dot"></span></span>
+    <span class="ticker-item">NY Urban Art Project <span class="ticker-dot"></span></span>
+    {%- endfor %}
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Latest Coverage</div>
+        <h2 class="section-title">NYC Events</h2>
+      </div>
+      <a class="more-link" href="{{ '/nyc-events/' | relative_url }}">All event stories →</a>
+    </div>
+    {%- if events.size > 0 %}
+    <div class="story-grid">
+      {%- for s in events limit: 6 %}{% include story-card.html story=s %}{% endfor %}
+    </div>
+    {%- else %}
+    <div class="empty-state">
+      <h3>First event stories are on the way</h3>
+      <p>Volunteer photographers from the MIND Youth Project and the NY Urban Art Project are preparing coverage of upcoming cultural events across the five boroughs.</p>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Our Mandate</div>
+        <h2 class="section-title">Three commitments to New York City</h2>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>Positive Peace in the City</h3>
+        <p>We promote and document cultural awareness events sponsored by the City of New York that reflect the eight Pillars of Positive Peace, as part of ARAC's Positive Peace mandate, led by M. Nuri Shakoor as an IEP Positive Peace Ambassador.</p>
+        <a class="feature-link" href="{{ '/positive-peace/' | relative_url }}">The eight Pillars →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>Media and Digital Literacy for All</h3>
+        <p>Through THINK services and toolkits we build critical thinking, digital and AI literacy, and advocate for community tools and services so that no community is left behind.</p>
+        <a class="feature-link" href="{{ site.links.think }}">Visit THINK →</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Diaspora and Community Understanding</h3>
+        <p>We cover events within New York's international communities to understand the social, political and economic issues they face, and highlight gatherings that promote unity and goodwill.</p>
+        <a class="feature-link" href="{{ '/nyc-events/' | relative_url }}">Community coverage →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Framework</div>
+        <h2 class="section-title">The eight Pillars of Positive Peace</h2>
+        <p class="section-lead">The Institute for Economics &amp; Peace defines Positive Peace as the attitudes, institutions and structures that create and sustain peaceful societies. Every story on this site is tagged with the Pillars it illustrates.</p>
+      </div>
+      <a class="more-link" href="{{ '/positive-peace/' | relative_url }}">How we apply them →</a>
+    </div>
+    <div class="pillar-grid">
+      {%- for p in site.data.pillars %}
+      <a class="pillar-item" href="{{ '/positive-peace/' | relative_url }}#{{ p.id }}">
+        <span class="pillar-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <strong>{{ p.name }}</strong>
+        <span class="desc">{{ p.local }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="think-section">
+  <div class="think-inner">
+    <div>
+      <div class="eyebrow">Public Service Initiative</div>
+      <div class="think-wordmark">THINK</div>
+      <div class="think-domain">think.arac-international.org</div>
+      <h2>Media and digital literacy, free and open to every community</h2>
+      <p>THINK is ARAC International's public service education initiative for media literacy, digital literacy, critical thinking and AI literacy. Our community coverage and THINK share one aim: residents who can examine a claim before acting on it.</p>
+      <blockquote class="think-quote">We do not tell you what to think. We help you think about information.</blockquote>
+      <div class="hero-actions">
+        <a href="{{ site.links.think }}" class="btn-primary">Visit THINK</a>
+        <a href="{{ site.links.newsletter }}" class="btn-outline">Get Updates</a>
+      </div>
+    </div>
+    <div class="think-pillars">
+      <div class="think-pillar"><strong>Media Literacy</strong><span>Reading a story for what it establishes, what it implies and what it leaves out.</span></div>
+      <div class="think-pillar"><strong>Digital Literacy</strong><span>Using platforms and online services safely and with confidence.</span></div>
+      <div class="think-pillar"><strong>Critical Thinking</strong><span>Testing a claim, weighing evidence and recognizing a weak argument.</span></div>
+      <div class="think-pillar"><strong>AI Literacy</strong><span>What generative tools do well, where they fail, and how synthetic content spreads.</span></div>
+    </div>
+  </div>
+</section>
+
+{%- assign press_rest = press | where_exp: "s", "s.url != featured.url" %}
+{%- if press_rest.size > 0 %}
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Newsroom</div>
+        <h2 class="section-title">Press &amp; Media</h2>
+      </div>
+      <a class="more-link" href="{{ '/press-media/' | relative_url }}">All press and media →</a>
+    </div>
+    <div class="story-grid">
+      {%- assign shown = 0 %}
+      {%- for s in press %}{% if s.url != featured.url and shown < 3 %}{% include story-card.html story=s %}{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Programs</div>
+        <h2 class="section-title">Made by community volunteers</h2>
+      </div>
+      <a class="more-link" href="{{ '/about/' | relative_url }}">Meet the team →</a>
+    </div>
+    <div class="program-grid">
+      {%- for prog in site.data.programs %}
+      {%- assign members = site.data.team | where_exp: "m", "m.programs contains prog.id" %}
+      <a class="program-card" href="{{ '/about/' | relative_url }}#{{ prog.id }}" style="text-decoration:none;">
+        <div class="kicker">Program</div>
+        <h3>{{ prog.name }}</h3>
+        <p>{% if prog.description %}{{ prog.description }} {% endif %}{{ members.size }} volunteer contributors and photographers.</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>Know an event that brings New York together?</h2>
+      <p>Tell us about City-sponsored cultural events and community gatherings in your neighborhood, or join us as a volunteer photographer or contributor.</p>
+    </div>
+    <a class="btn-white" href="mailto:{{ site.organization.email }}?subject=Community%20NYC%20event%20tip">Share an Event</a>
+  </div>
+</section>

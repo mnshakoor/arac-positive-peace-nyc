@@ -1,0 +1,100 @@
+---
+title: Media Library
+description: Photo collections, video and press assets from ARAC Community NYC coverage of New York City cultural events, with photographer credits and usage terms.
+---
+{%- assign stories = site.nyc_events | concat: site.press_media | sort: "date" | reverse -%}
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span>/</span>Media Library</div>
+    <div class="eyebrow">Assets</div>
+    <h1 class="page-title">Media <em>Library</em></h1>
+    <p class="page-lead">Photo collections, video and press assets from our coverage, organized by story. Every photograph carries its photographer's credit. Collections appear here automatically when a story is published.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head"><div><div class="section-label">Photography</div><h2 class="section-title">Photo collections</h2></div></div>
+    {%- assign shown = 0 %}
+    {%- for s in stories %}
+      {%- if s.image or s.gallery.size > 0 %}
+      {%- assign shown = shown | plus: 1 %}
+      <div class="collection">
+        <div class="collection-head">
+          <a href="{{ s.url | relative_url }}">{{ s.title }}</a>
+          <span>{{ s.date | date: "%B %-d, %Y" }} · {% if s.image %}{{ s.gallery | size | plus: 1 }}{% else %}{{ s.gallery | size }}{% endif %} photos</span>
+        </div>
+        <div class="thumb-grid">
+          {%- if s.image %}
+          <figure>
+            <a href="{{ s.image | relative_url }}" target="_blank" rel="noopener"><div class="media">{% include media.html src=s.image alt=s.image_alt %}</div></a>
+            {%- if s.image_credit %}<div class="credit">Photo: {{ s.image_credit }}</div>{% endif %}
+          </figure>
+          {%- endif %}
+          {%- for g in s.gallery %}
+          <figure>
+            <a href="{{ g.src | relative_url }}" target="_blank" rel="noopener"><div class="media">{% include media.html src=g.src alt=g.alt %}</div></a>
+            {%- if g.credit %}<div class="credit">Photo: {{ g.credit }}</div>{% endif %}
+          </figure>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endif %}
+    {%- endfor %}
+    {%- if shown == 0 %}
+    <div class="empty-state">
+      <h3>Collections publish with each story</h3>
+      <p>Photo collections appear here automatically when an event story with photos is published.</p>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+{%- assign has_video = false %}
+{%- for s in stories %}{% if s.videos.size > 0 %}{% assign has_video = true %}{% endif %}{% endfor %}
+{%- if has_video %}
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head"><div><div class="section-label">Video</div><h2 class="section-title">Video stories</h2></div></div>
+    <div class="story-grid">
+      {%- for s in stories %}{% for v in s.videos %}
+      <article class="story-card">
+        <a href="{{ s.url | relative_url }}">
+          <div class="media">
+            {%- if v.youtube %}<img src="https://i.ytimg.com/vi/{{ v.youtube }}/hqdefault.jpg" alt="{{ v.title | escape }}" loading="lazy">
+            {%- else %}{% include media.html src=s.image alt=s.image_alt %}{% endif %}
+            <div class="media-badges"><span>Video</span></div>
+          </div>
+          <div class="story-card-body">
+            <div class="kicker">{{ s.category }}</div>
+            <h3>{{ v.title }}</h3>
+            <p>From: {{ s.title }}</p>
+          </div>
+        </a>
+      </article>
+      {%- endfor %}{% endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section{% unless has_video %} section-alt{% endunless %}" id="press-kit">
+  <div class="section-inner">
+    <div class="section-head"><div><div class="section-label">Press</div><h2 class="section-title">Press kit and usage terms</h2></div></div>
+    <div class="program-grid">
+      <div class="program-card" style="display:flex;gap:1.4rem;align-items:center;">
+        <img src="{{ '/assets/brand/arac-logo1.PNG' | relative_url }}" alt="ARAC International logo" width="110" style="background:#fff;border-radius:50%;padding:6px;flex-shrink:0;">
+        <div>
+          <div class="kicker">Logo</div>
+          <h3>ARAC International</h3>
+          <p><a href="{{ '/assets/brand/arac-logo1.PNG' | relative_url }}" download>PNG</a> · <a href="{{ '/assets/brand/arac-logo1.jpg' | relative_url }}" download>JPG</a> · <a href="{{ '/assets/brand/arac-round.PNG' | relative_url }}" download>Round mark</a></p>
+        </div>
+      </div>
+      <div class="program-card" id="usage">
+        <div class="kicker">Usage terms</div>
+        <h3>Using our photographs</h3>
+        <p>Photographs remain the work of the credited volunteer photographer. Media outlets may use images for coverage of ARAC programs with visible credit and a link to the story. Commercial use or alteration requires written permission from ARAC International Inc. (<a href="mailto:{{ site.organization.email }}">{{ site.organization.email }}</a>).</p>
+      </div>
+    </div>
+  </div>
+</section>

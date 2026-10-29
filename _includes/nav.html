@@ -1,0 +1,30 @@
+<a href="#main" class="skip-link">Skip to content</a>
+<nav class="site-nav" aria-label="Primary">
+  <a href="{{ '/' | relative_url }}" class="nav-brand">
+    <img src="{{ '/assets/brand/arac-logo1.jpg' | relative_url }}" alt="ARAC International" class="nav-logo-img" width="44" height="44">
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">ARAC Community NYC</span>
+      <span class="nav-brand-tagline">{{ site.tagline }}</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    {%- for item in site.data.nav %}
+    <li><a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} class="is-current" aria-current="page"{% endif %}>{{ item.label }}</a></li>
+    {%- endfor %}
+    <li><a href="{{ site.links.think }}">THINK</a></li>
+    <li><a href="{{ site.links.arac }}" class="nav-cta">ARAC International</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobilePanel" onclick="var p=document.getElementById('mobilePanel');var o=p.classList.toggle('open');this.setAttribute('aria-expanded',o);">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-panel" id="mobilePanel">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  {%- for item in site.data.nav %}
+  <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+  {%- endfor %}
+  <span class="mp-label">ARAC Network</span>
+  <a href="{{ site.links.think }}">THINK: Media and Digital Literacy</a>
+  <a href="{{ site.links.arac }}">ARAC International</a>
+  <a href="{{ site.links.newsletter }}">Newsletter</a>
+</div>

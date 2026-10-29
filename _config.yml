@@ -1,0 +1,62 @@
+# ARAC Community NYC · community.arac-international.org
+# Built automatically by GitHub Pages (Jekyll). No plugins, no build tools.
+# After editing this file, GitHub Pages rebuilds the whole site on the next push.
+
+title: ARAC Community NYC
+tagline: Positive Peace · Culture · Community
+description: >-
+  Photo and video stories from New York City cultural events that build Positive Peace,
+  coverage of the city's diaspora communities, and media and digital literacy through THINK.
+  A community media initiative of ARAC International Inc.
+url: https://community.arac-international.org
+baseurl: ""
+lang: en-US
+locale: en_US
+timezone: America/New_York
+
+# Default share image (used when a page has no photo of its own)
+default_image: /assets/brand/arac-logo1.jpg
+default_image_alt: ARAC International Inc. logo
+
+organization:
+  name: ARAC International Inc.
+  url: https://arac-international.org
+  email: info@arac-international.org
+  donate: https://www.paypal.com/donate/?hosted_button_id=N48F8784BCPEE
+  twitter: "@ARACInternational"
+
+links:
+  arac: https://arac-international.org
+  think: https://think.arac-international.org
+  newsletter: https://newsletter.arac-international.org/subscribe
+  stratcom: https://arac-international.org/stratcom/
+  iep: https://www.economicsandpeace.org
+  vision_of_humanity: https://www.visionofhumanity.org
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  nyc_events:
+    output: true
+    permalink: /nyc-events/:name/
+  press_media:
+    output: true
+    permalink: /press-media/:name/
+
+defaults:
+  - scope: { path: "", type: nyc_events }
+    values: { layout: story, section: NYC Events, section_url: /nyc-events/ }
+  - scope: { path: "", type: press_media }
+    values: { layout: story, section: Press & Media, section_url: /press-media/ }
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

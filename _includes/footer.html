@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-brand-row">
+        <img src="{{ '/assets/brand/arac-logo1.PNG' | relative_url }}" alt="ARAC International" width="52" height="52" loading="lazy">
+        <div>
+          <div class="footer-brand-name">ARAC Community NYC</div>
+          <div class="footer-brand-tag">{{ site.tagline }}</div>
+        </div>
+      </div>
+      <p>The community media site of ARAC International Inc., a 501(c)(3) nonprofit. Stories from New York City events that build Positive Peace, made by community volunteers.</p>
+    </div>
+    <div class="footer-col">
+      <h5>This Site</h5>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        {%- for item in site.data.nav %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>ARAC Network</h5>
+      <ul>
+        <li><a href="{{ site.links.arac }}">ARAC International</a></li>
+        <li><a href="{{ site.links.think }}">THINK Initiative</a></li>
+        <li><a href="{{ site.links.stratcom }}">STRATCOM</a></li>
+        <li><a href="{{ site.links.newsletter }}">Newsletter</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get Involved</h5>
+      <ul>
+        <li><a href="mailto:{{ site.organization.email }}?subject=Community%20NYC%20event%20tip">Share an Event</a></li>
+        <li><a href="mailto:{{ site.organization.email }}?subject=Volunteer%20with%20ARAC%20Community%20NYC">Volunteer</a></li>
+        <li><a href="mailto:{{ site.organization.email }}?subject=Press%20inquiry">Press Inquiries</a></li>
+        <li><a href="{{ site.organization.donate }}">Donate</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-note">Event coverage describes cultural programs sponsored by the City of New York and community partners. ARAC International Inc. is an independent nonprofit; coverage does not imply endorsement by, or affiliation with, any City agency. Photographs are credited to the volunteer who made them and may not be reused without permission.</p>
+  <div class="footer-bottom">
+    <p>© {{ site.time | date: "%Y" }} ARAC International Inc. · 501(c)(3) Nonprofit · <a href="mailto:{{ site.organization.email }}">{{ site.organization.email }}</a></p>
+    <p><a href="{{ site.links.arac }}">arac-international.org</a></p>
+  </div>
+</footer>

@@ -1,0 +1,99 @@
+---
+title: About and Team
+description: Meet the ARAC International volunteers, photographers, advocates and board members behind ARAC Community NYC, the MIND Youth Project and the NY Urban Art Project.
+---
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span>/</span>About</div>
+    <div class="eyebrow">About</div>
+    <h1 class="page-title">A community newsroom <em>for Positive Peace</em></h1>
+    <p class="page-lead">ARAC Community NYC is the community media site of <a href="{{ site.links.arac }}" style="color:var(--sage-muted);">ARAC International Inc.</a> Volunteer journalists, photographers and educators document the cultural life of New York City, connect it to the Pillars of Positive Peace, and promote media and digital literacy through <a href="{{ site.links.think }}" style="color:var(--sage-muted);">THINK</a>.</p>
+  </div>
+</header>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head"><div><div class="section-label">Programs</div><h2 class="section-title">ARAC community programs</h2></div></div>
+    <div class="program-grid">
+      {%- for prog in site.data.programs %}
+      {%- assign members = site.data.team | where_exp: "m", "m.programs contains prog.id" %}
+      <div class="program-card" id="{{ prog.id }}">
+        <div class="kicker">Program</div>
+        <h3>{{ prog.name }}</h3>
+        {%- if prog.description %}<p>{{ prog.description }}</p>{% endif %}
+        <p><strong>Contributors:</strong> {% for m in members %}<a href="#{{ m.slug }}" style="color:var(--text-body);">{{ m.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="team">
+  <div class="section-inner">
+    <div class="section-head"><div><div class="section-label">Our People</div><h2 class="section-title">Volunteers, advocates and board</h2></div></div>
+    {%- for group in site.data.groups %}
+    {%- if group.id == "board" %}
+      {%- assign people = site.data.team | where: "board", true %}
+    {%- else %}
+      {%- assign people = site.data.team | where: "group", group.id %}
+    {%- endif %}
+    <div class="team-group">
+      <div class="kicker">{{ group.label }}</div>
+      <div class="team-grid">
+        {%- for p in people %}
+        <div class="person"{% if group.id == p.group %} id="{{ p.slug }}"{% endif %}>
+          {%- if p.photo %}<img class="person-photo" src="{{ p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy">
+          {%- else %}<span class="person-initials" aria-hidden="true">{{ p.initials }}</span>{% endif %}
+          <div>
+            <strong>{% if p.url %}<a href="{{ p.url }}" style="color:inherit;text-decoration:none;">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</strong>
+            <div class="roles">{{ p.roles | join: " · " }}</div>
+            {%- if p.programs.size > 0 %}
+            <div class="programs">{% for id in p.programs %}{% assign prog = site.data.programs | where: "id", id | first %}{{ prog.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}</div>
+            {%- endif %}
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="standards">
+      <div class="section-label">Editorial Standards</div>
+      <ul>
+        <li>Every photograph is credited to the volunteer who made it.</li>
+        <li>Factual claims link to their sources. Coverage separates what was observed from what is interpreted.</li>
+        <li>Pillar tags describe how an event connects to Positive Peace. They are not a measurement of peace.</li>
+        <li>Event coverage does not imply endorsement by, or affiliation with, the City of New York or any City agency.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "AboutPage", "url": "{{ page.url | absolute_url }}", "name": "About ARAC Community NYC", "description": {{ page.description | jsonify }} },
+    {%- for p in site.data.team %}
+    {
+      "@type": "Person",
+      "@id": "{{ '/about/' | absolute_url }}#{{ p.slug }}",
+      "name": {{ p.name | jsonify }},
+      "jobTitle": {{ p.roles | join: ", " | jsonify }},
+      "affiliation": { "@id": "{{ site.organization.url }}/#organization" }
+    },
+    {%- endfor %}
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "{{ page.url | absolute_url }}" }
+      ]
+    }
+  ]
+}
+</script>

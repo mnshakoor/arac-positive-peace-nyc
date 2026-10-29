@@ -1,0 +1,38 @@
+---
+title: Positive Peace in New York City
+description: How ARAC International applies the Institute for Economics & Peace framework of Positive Peace, the attitudes, institutions and structures that sustain peaceful societies, to community events in New York City.
+---
+{%- assign stories = site.nyc_events | concat: site.press_media | sort: "date" | reverse -%}
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span>/</span>Positive Peace</div>
+    <div class="eyebrow">Framework</div>
+    <h1 class="page-title">Positive Peace, applied to <em>the neighborhoods of New York</em></h1>
+    <p class="page-lead">The Institute for Economics &amp; Peace (IEP) defines Positive Peace as the attitudes, institutions and structures that create and sustain peaceful societies, measured through eight interdependent Pillars. ARAC's Positive Peace work is led by M. Nuri Shakoor, an IEP Positive Peace Ambassador. This site applies the framework at the scale of a city: each story is tagged with the Pillars it illustrates.</p>
+  </div>
+</header>
+
+<section class="section section-alt">
+  <div class="section-inner" style="max-width:960px;">
+    {%- for p in site.data.pillars %}
+    {%- assign tagged = stories | where_exp: "s", "s.pillars contains p.id" %}
+    <div class="pillar-detail" id="{{ p.id }}">
+      <span class="pillar-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+      <h2>{{ p.name }}</h2>
+      <dl>
+        <div><dt>What it describes</dt><dd>{{ p.summary }}</dd></div>
+        <div><dt>What it looks like locally</dt><dd>{{ p.local }}</dd></div>
+      </dl>
+      {%- if tagged.size > 0 %}
+      <div class="tagged"><strong>Stories:</strong> {% for s in tagged limit: 5 %}<a href="{{ s.url | relative_url }}">{{ s.title }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</div>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+
+    <div class="standards" style="margin-top:2.5rem;">
+      <div class="section-label">A systems view</div>
+      <p style="line-height:1.8;">IEP treats the Pillars as a system: they reinforce one another, and progress in one tends to depend on the others. A single event rarely moves a Pillar on its own. Our coverage records where community activity connects to each Pillar; it does not claim to measure peace.</p>
+      <p style="margin-top:1rem;">Primary sources: <a href="{{ site.links.iep }}">Institute for Economics &amp; Peace</a> · <a href="{{ site.links.vision_of_humanity }}">Vision of Humanity</a></p>
+    </div>
+  </div>
+</section>
