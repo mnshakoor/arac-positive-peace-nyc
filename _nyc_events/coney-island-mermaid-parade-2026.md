@@ -6,7 +6,7 @@ category: Urban Art
 author: m-nuri-shakoor
 tags: [coney island mermaid parade, coney island, brooklyn, art parade, public space, cultural freedom, positive peace]
 pillars: [acceptance-of-the-rights-of-others, high-levels-of-human-capital, low-levels-of-corruption]
-featured: true
+featured: false
 lead_video: true            # show the video at the top instead of a cover image
 
 event:
