@@ -1,0 +1,24 @@
+{%- comment -%}
+  Places one of the story's videos inside the article text.
+  In the story body, on its own line with a blank line above and below:
+      {% include video.html n=2 %}
+  n is the video's position in the `videos:` list (1 = first).
+  Mark that video `inline: true` so it is not repeated in the Video section
+  at the bottom, and `short: true` for vertical YouTube Shorts.
+{%- endcomment -%}
+{%- assign vid_index = include.n | minus: 1 -%}
+{%- assign vid = page.videos[vid_index] -%}
+{%- if vid -%}
+<figure class="video-embed inline-video{% if vid.short %} short{% endif %}">
+  <div class="frame-wrap">
+    {%- if vid.youtube %}
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ vid.youtube }}?rel=0" title="{{ vid.title | escape }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    {%- elsif vid.vimeo %}
+    <iframe src="https://player.vimeo.com/video/{{ vid.vimeo }}?dnt=1" title="{{ vid.title | escape }}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {%- elsif vid.file %}
+    <video controls preload="metadata"{% if vid.poster %} poster="{{ vid.poster | relative_url }}"{% endif %}><source src="{{ vid.file | relative_url }}"></video>
+    {%- endif %}
+  </div>
+  <figcaption class="fig-caption">{{ vid.title }}{% if vid.credit %} <span class="credit">Video: {{ vid.credit }}</span>{% endif %}</figcaption>
+</figure>
+{%- endif -%}

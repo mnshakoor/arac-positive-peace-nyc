@@ -43,7 +43,9 @@ For press releases and announcements, use `_templates/press-media-item.md`, the 
 - **Drafts:** add `published: false` to keep a story off the live site while you work on it.
 - **Featured:** add `featured: true` to put a story in the home page hero.
 - **Credits:** `author`, `photographers` and `contributors` use the short names (slugs) in `_data/team.yml`, so each credit links to the person on the About page.
-- **Video:** put long video on YouTube or Vimeo and paste the video ID. Only short clips belong in the repository.
+- **Video:** put long video on YouTube or Vimeo and paste the video ID (the part after `youtu.be/` or `shorts/`). Only short clips belong in the repository.
+- **Video at the top:** add `lead_video: true` and the first video in `videos:` replaces the cover photo.
+- **Videos inside the text:** list them in `videos:` with `inline: true` (add `short: true` for vertical YouTube Shorts), then put `{% include video.html n=2 %}` on its own line in the story where the second video should appear (`n=3` for the third, and so on). Inline videos are not repeated at the bottom of the story. See the Puerto Rican Day Parade story for a working example.
 - **Formatting:** the story body uses Markdown: `## Heading`, `**bold**`, `[link text](https://...)`, `> quote`, and `- list item`.
 
 ## Everyday edits

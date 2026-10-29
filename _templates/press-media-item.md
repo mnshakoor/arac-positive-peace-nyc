@@ -50,6 +50,10 @@ videos:
     title: "Video title"
     date: 2026-11-02
     credit: Igor Ktodoma
+  # - youtube: SHORT_ID           # a vertical YouTube Short placed inside the text
+  #   title: "Clip title"
+  #   short: true
+  #   inline: true                # then write {% include video.html n=2 %} in the story body
   # - vimeo: 123456789
   #   title: "Video title"
   # - file: /assets/press-media/STORY-NAME/clip.mp4   # short clips only; long video belongs on YouTube

@@ -6,7 +6,7 @@ category: Cultural Heritage
 author: m-nuri-shakoor
 tags: [alcorn state university, hbcu, sounds of dynamite, golden girls, marching band, macys thanksgiving day parade, cultural diplomacy, positive peace]
 pillars: [high-levels-of-human-capital, acceptance-of-the-rights-of-others, good-relations-with-neighbours]
-featured: true
+featured: false
 lead_video: true            # show the video at the top instead of the cover image
 
 # Cover: the video's YouTube thumbnail. Replace with a still uploaded to
