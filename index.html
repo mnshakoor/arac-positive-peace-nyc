@@ -20,8 +20,9 @@ description: Photo and video stories from New York City cultural events that bui
       </div>
     </div>
     {%- if featured %}
+    {%- include cover.html story=featured %}
     <a class="hero-feature" href="{{ featured.url | relative_url }}">
-      <div class="media">{% include media.html src=featured.image alt=featured.image_alt eager=true %}</div>
+      <div class="media">{% include media.html src=cover_src alt=cover_alt eager=true %}</div>
       <div class="hero-feature-body">
         <div class="kicker">Featured · {{ featured.category }}</div>
         <h2>{{ featured.title }}</h2>

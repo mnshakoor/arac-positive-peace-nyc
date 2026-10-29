@@ -21,8 +21,9 @@ layout: null
       <dc:creator>{{ author.name | default: site.organization.name | xml_escape }}</dc:creator>
       <category>{{ s.category | xml_escape }}</category>
       <description>{{ s.description | xml_escape }}</description>
-      {%- if s.image %}
-      <media:content url="{{ s.image | absolute_url }}" medium="image"><media:description>{{ s.image_alt | xml_escape }}</media:description></media:content>
+      {%- include cover.html story=s %}
+      {%- if cover_src %}
+      <media:content url="{{ cover_src | absolute_url }}" medium="image"><media:description>{{ cover_alt | xml_escape }}</media:description></media:content>
       {%- endif %}
     </item>
     {%- endfor %}

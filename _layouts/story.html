@@ -2,7 +2,8 @@
 layout: default
 ---
 {%- assign author = site.data.team | where: "slug", page.author | first -%}
-{%- assign story_image = page.image | default: site.default_image | absolute_url -%}
+{%- include cover.html story=page -%}
+{%- assign story_image = cover_src | default: site.default_image | absolute_url -%}
 
 <header class="page-hero">
   <div class="page-hero-inner narrow">

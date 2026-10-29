@@ -1,0 +1,15 @@
+{%- comment -%}
+  Works out a story's cover image. Sets cover_src and cover_alt.
+  Uses the story's `image`; if there is none but the story has a YouTube
+  video, uses that video's thumbnail, so stories never show a blank cover.
+  Usage: {% include cover.html story=s %}
+{%- endcomment -%}
+{%- assign cover_src = include.story.image -%}
+{%- assign cover_alt = include.story.image_alt | default: include.story.title -%}
+{%- unless cover_src -%}
+  {%- assign cover_video = include.story.videos | first -%}
+  {%- if cover_video.youtube -%}
+    {%- assign cover_src = "https://i.ytimg.com/vi/" | append: cover_video.youtube | append: "/hqdefault.jpg" -%}
+    {%- assign cover_alt = "Video still: " | append: cover_video.title -%}
+  {%- endif -%}
+{%- endunless -%}

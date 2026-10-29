@@ -8,8 +8,9 @@
 {%- endif -%}
 {%- assign seo_desc = page.description | default: site.description | strip_newlines | strip -%}
 {%- assign seo_url = page.url | absolute_url -%}
-{%- assign seo_image = page.image | default: site.default_image | absolute_url -%}
-{%- assign seo_image_alt = page.image_alt | default: site.default_image_alt -%}
+{%- if page.collection -%}{%- include cover.html story=page -%}{%- else -%}{%- assign cover_src = page.image -%}{%- assign cover_alt = page.image_alt -%}{%- endif -%}
+{%- assign seo_image = cover_src | default: site.default_image | absolute_url -%}
+{%- assign seo_image_alt = cover_alt | default: site.default_image_alt -%}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ seo_title | escape }}</title>

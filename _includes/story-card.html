@@ -1,9 +1,10 @@
 {%- assign s = include.story -%}
+{%- include cover.html story=s -%}
 {%- assign author = site.data.team | where: "slug", s.author | first -%}
 <article class="story-card">
   <a href="{{ s.url | relative_url }}">
     <div class="media">
-      {% include media.html src=s.image alt=s.image_alt %}
+      {% include media.html src=cover_src alt=cover_alt %}
       {%- if s.videos.size > 0 or s.gallery.size > 0 %}
       <div class="media-badges">
         {%- if s.videos.size > 0 %}<span>Video</span>{% endif %}
