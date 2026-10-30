@@ -1,7 +1,7 @@
 ---
 title: "Cultural Pride in the Streets: The Civic Power of the National Puerto Rican Day Parade"
 description: "Field coverage from Fifth Avenue at the 2026 National Puerto Rican Day Parade, and what one of the largest heritage celebrations in the United States shows about community resilience and Positive Peace."
-date: 2026-10-29 14:00:00 -0400
+date: 2026-06-18
 category: Diaspora Communities
 author: m-nuri-shakoor
 tags: [national puerto rican day parade, puerto rico, fifth avenue, diaspora, heritage, cultural diplomacy, civic engagement, positive peace]
