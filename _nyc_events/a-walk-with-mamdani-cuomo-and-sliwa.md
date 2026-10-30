@@ -1,7 +1,7 @@
 ---
 title: "A Walk With Mamdani, Cuomo, and Sliwa: Finding Positive Peace in Civic Celebration"
 description: "At the August 2025 Dominican Day Parade, mayoral candidates Zohran Mamdani, Andrew Cuomo and Curtis Sliwa shared one civic space. What the walk shows about the mechanics of Positive Peace."
-date: 2026-10-29
+date: 2025-08-14
 category: Diaspora Communities
 author: m-nuri-shakoor
 tags: [dominican day parade, 2025 nyc mayoral race, zohran mamdani, andrew cuomo, curtis sliwa, civic engagement, due process, diaspora, positive peace]
