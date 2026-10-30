@@ -39,7 +39,7 @@ For press releases and announcements, use `_templates/press-media-item.md`, the 
 
 **Good to know**
 
-- **Dates:** a story whose `date` is in the future is hidden until the site is next rebuilt on or after that date. Use the publication date, not the event date.
+- **Dates and editorial chronology:** For retrospective event coverage, set the article's `date` to **3 or 4 calendar days after the verified event date** to maintain the ARAC Community NYC editorial chronology. Preserve the actual date separately under `event.date`. Never use the date a retrospective story was uploaded to GitHub as its display date. Verify the event date before assigning an article date; do not invent dates for undated events, analyses, or institutional announcements. A future-dated article is hidden until the site is rebuilt on or after that date.
 - **Drafts:** add `published: false` to keep a story off the live site while you work on it.
 - **Featured:** add `featured: true` to put a story in the home page hero.
 - **Credits:** `author`, `photographers` and `contributors` use the short names (slugs) in `_data/team.yml`, so each credit links to the person on the About page.
