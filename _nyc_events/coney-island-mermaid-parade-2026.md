@@ -11,7 +11,7 @@ lead_video: true            # show the video at the top instead of a cover image
 
 event:
   name: 2026 Coney Island Mermaid Parade
-  when: June 2026
+  date: 2026-06-20
   venue: Coney Island streets and boardwalk
   borough: Brooklyn
   organizer: Coney Island USA
