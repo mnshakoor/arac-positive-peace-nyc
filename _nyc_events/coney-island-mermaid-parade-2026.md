@@ -1,7 +1,7 @@
 ---
 title: "Mythos, Margin, and Metamorphosis: The Coney Island Mermaid Parade"
 description: "Field documentation from the June 2026 Coney Island Mermaid Parade, the largest art parade in the United States, read as an exercise in cultural democracy and Positive Peace."
-date: 2026-10-29 15:00:00 -0400
+date: 2026-06-24
 category: Urban Art
 author: m-nuri-shakoor
 tags: [coney island mermaid parade, coney island, brooklyn, art parade, public space, cultural freedom, positive peace]
