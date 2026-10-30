@@ -1,7 +1,7 @@
 ---
 title: "HBCU Excellence in Motion: The Cultural Diplomacy of Alcorn State at Macy’s"
 description: "Alcorn State University's Sounds of Dynamite marching band, Golden Girls and drumline at the 2025 Macy's Thanksgiving Day Parade, read through the Positive Peace framework."
-date: 2026-10-29 12:00:00 -0400
+date: 2025-12-01
 category: Cultural Heritage
 author: m-nuri-shakoor
 tags: [alcorn state university, hbcu, sounds of dynamite, golden girls, marching band, macys thanksgiving day parade, cultural diplomacy, positive peace]
