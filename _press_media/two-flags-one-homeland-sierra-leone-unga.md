@@ -1,7 +1,8 @@
 ---
 title: "Two Flags, One Homeland: What Sierra Leone's UNGA Divide Reveals About Peace"
-description: "As Sierra Leoneans rallied for and against President Julius Maada Bio during UNGA in New York, their competing voices exposed a deeper question: how can a divided diaspora help build trust at home?"
-date: 2026-10-29
+description: "A September 29, 2025 video of Sierra Leonean supporters and protesters at UNGA in New York, revisited through the lens of Positive Peace and diaspora dialogue."
+date: 2025-10-03
+updated: 2026-10-29
 category: Media Coverage
 author: m-nuri-shakoor
 tags: [sierra leone, diaspora, UNGA, civic engagement, electoral reform, positive peace, new york city]
@@ -30,7 +31,7 @@ sources:
 
 On one side of a New York street, Sierra Leoneans came to celebrate their president. On the other, fellow Sierra Leoneans came to challenge him. Both groups had crossed an ocean, in the political sense if not literally that morning, to make themselves heard. Both claimed to speak for a country they care about. And both, in different ways, asked the world to pay attention.
 
-This is the picture that emerges from the video report **“Sierra Leone: President Bio's UNGA Rally Met with Both Celebration and Protests.”** The rally and counter-demonstration unfolded in the orbit of the United Nations General Assembly, where international diplomacy takes place behind guarded doors and national arguments find another stage outside them.
+This is the picture that emerges from the video report **“Sierra Leone: President Bio's UNGA Rally Met with Both Celebration and Protests.”** The footage, published on September 29, 2025, documents competing Sierra Leonean diaspora voices during the 80th United Nations General Assembly (UNGA80). The rally and counter-demonstration unfolded in the orbit of the United Nations General Assembly, where international diplomacy takes place behind guarded doors and national arguments find another stage outside them.
 
 It is tempting to treat such scenes as a contest of slogans, flags and crowd sizes. Who turned out more people? Which message was louder? Which side had the better signs? But those questions tell us comparatively little about Sierra Leone's future.
 
@@ -38,7 +39,7 @@ The more important question is this: **What happens to a democracy when its citi
 
 ## A street in New York, a political argument in Sierra Leone
 
-The footage presents a familiar yet revealing contrast. Supporters of President Julius Maada Bio express confidence in his leadership and point to national progress. Critics voice dissatisfaction over elections, accountability, civil liberties, economic hardship and the country's devastating drug problem.
+The 2025 footage presents a familiar yet revealing contrast. Supporters of President Julius Maada Bio express confidence in his leadership and point to national progress. Critics voice dissatisfaction over elections, accountability, civil liberties, economic hardship and the country's devastating drug problem.
 
 Those positions deserve to be heard as *claims and perspectives*, not automatically converted into independently verified findings. A demonstration can establish that people hold a grievance, and that they are motivated to publicize it. It cannot, on its own, settle the truth of each allegation or represent the opinions of all Sierra Leoneans.
 
@@ -116,7 +117,7 @@ The final measure of a nation's stability is not whether its citizens praise the
 
 **A democracy does not become stronger when everyone agrees. It becomes stronger when disagreement no longer threatens the social fabric that holds its people together.**
 
-*This article offers a Positive Peace interpretation of the issues presented in the embedded field report. Demonstrators' statements are attributed as perspectives; allegations are not independently established by the footage. The recording date was not confirmed for this article.*
+*Editorial chronology: The video was published on September 29, 2025, during UNGA80. The October 3, 2025 date above is an archival coverage date, not a claim that this retrospective article was originally published then. This analysis was prepared in October 2026 and includes developments reported through 2026. The precise recording date has not been independently confirmed. Demonstrators’ statements are attributed as perspectives; allegations are not independently established by the footage.*
 
 ### References
 
