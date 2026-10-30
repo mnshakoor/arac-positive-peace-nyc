@@ -26,6 +26,10 @@ The site has three commitments.
 2. **Media and digital literacy for every community.** Through [THINK](https://think.arac-international.org), ARAC offers services and toolkits for critical thinking, digital literacy and AI literacy, and advocates for community tools and services that give every neighborhood access to them.
 3. **Understanding diaspora communities.** We cover events within New York's international communities to improve understanding of the social, political and economic issues they face, and to highlight gatherings that promote unity and goodwill.
 
+## THINK: From proposal to public service
+
+The THINK initiative was first proposed in early 2025. Its concept and program direction were developed beginning in June 2026, and [THINK went live on September 2, 2026](https://think.arac-international.org). This chronology belongs to THINK as a distinct ARAC public-service initiative; it should not be confused with the launch date of the ARAC Community NYC website.
+
 ## Who makes it
 
 Stories are produced by ARAC volunteers, including photographers and contributors from the **ARAC MIND Youth Project** and the **ARAC NY Urban Art Project**. Every photograph is credited to the volunteer who made it. The full roster is on the [About](/about/) page.
