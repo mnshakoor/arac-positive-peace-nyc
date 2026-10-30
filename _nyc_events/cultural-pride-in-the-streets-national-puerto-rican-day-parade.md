@@ -29,7 +29,7 @@ videos:
     title: "Field clip from Fifth Avenue, National Puerto Rican Day Parade"
     short: true
     inline: true
-  - youtube: S_DkeA1ukaw
+  - youtube: Y-Q2ZtVNNtE
     title: "Field clip from Fifth Avenue, National Puerto Rican Day Parade"
     short: true
     inline: true
@@ -39,6 +39,8 @@ sources:
     url: https://youtu.be/QQ4318M17HA
   - label: "Field clips (YouTube Shorts)"
     url: https://youtube.com/shorts/Yp3j5SaXCD8
+  - label: "Puerto Rican Day Parade: additional field clip (YouTube Shorts)"
+    url: https://youtube.com/shorts/Y-Q2ZtVNNtE
   - label: Institute for Economics & Peace, Positive Peace framework
     url: https://www.economicsandpeace.org
 ---
