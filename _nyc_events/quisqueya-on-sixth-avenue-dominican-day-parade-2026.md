@@ -38,6 +38,10 @@ videos:
     title: "Dominican Day Parade: Street-Level Moment 4"
     short: true
     inline: true
+  - youtube: S_DkeA1ukaw
+    title: "Dominican Day Parade: Additional Cultural Celebration Clip"
+    short: true
+    inline: true
 sources:
   - label: "National Dominican Day Parade, official organizer"
     url: https://natddp.org/
@@ -49,6 +53,8 @@ sources:
     url: https://www.economicsandpeace.org/research/positive-peace/
   - label: "ARAC parade coverage: Main video"
     url: https://youtu.be/yoLJhKYztvk
+  - label: "Dominican Day Parade: additional video clip"
+    url: https://youtu.be/S_DkeA1ukaw
 ---
 
 On a summer Sunday, Sixth Avenue becomes something more than a busy Manhattan thoroughfare. Dominican flags fill the street, music carries between the buildings, and families and neighbors gather to celebrate a heritage that is also an essential part of New York City's identity.
@@ -99,11 +105,13 @@ At ARAC, we believe those opportunities matter. Positive Peace is built through 
 
 {% include video.html n=5 %}
 
+{% include video.html n=6 %}
+
 The lasting value of the National Dominican Day Parade is therefore larger than a day's festivities. It is found in the children learning their heritage, the neighbors discovering something new, and a city making room for its communities to be seen and heard.
 
 **We support these celebrations because a city that makes space for its many cultures also makes space for stronger relationships between its people.**
 
-*ARAC Community NYC documents cultural events and diaspora life in New York City through the lens of Positive Peace. The main video above and four short field clips throughout this article form part of our visual coverage.*
+*ARAC Community NYC documents cultural events and diaspora life in New York City through the lens of Positive Peace. The main video above and five short field clips throughout this article form part of our visual coverage.*
 
 ### References
 
