@@ -1,7 +1,7 @@
 ---
 title: "Two Flags, One Homeland: What Sierra Leone's UNGA Divide Reveals About Peace"
 description: "Recorded September 24, 2025, as Sierra Leonean supporters and protesters gathered during President Bio’s UNGA80 address in New York. A retrospective examination of diaspora dialogue and Positive Peace."
-date: 2025-09-28
+date: 2025-09-29
 updated: 2026-10-29
 category: Media Coverage
 author: m-nuri-shakoor
@@ -119,7 +119,7 @@ The final measure of a nation's stability is not whether its citizens praise the
 
 **A democracy does not become stronger when everyone agrees. It becomes stronger when disagreement no longer threatens the social fabric that holds its people together.**
 
-*Editorial chronology: The rally, counterprotest and original footage date to September 24, 2025, when President Bio addressed UNGA80. The video was uploaded to YouTube on September 29, 2025, and coverage also appeared through another ARAC outlet at that time. The September 28, 2025 date above is an archival event-coverage date under the site’s four-day convention, not a claim that this expanded analysis existed then. This retrospective assessment was prepared in October 2026 and incorporates subsequently reported developments. Demonstrators’ statements are attributed as perspectives; allegations are not independently established by the footage.*
+*Editorial chronology: The rally, counterprotest and original footage date to September 24, 2025, when President Bio addressed UNGA80. The video was uploaded to YouTube on September 29, 2025, and coverage also appeared through another ARAC outlet at that time. The September 29, 2025 date above reflects the documented YouTube publication date and contemporary coverage, not a claim that this expanded analysis existed then. This retrospective assessment was prepared in October 2026 and incorporates subsequently reported developments. Demonstrators’ statements are attributed as perspectives; allegations are not independently established by the footage.*
 
 ### References
 
