@@ -1,7 +1,7 @@
 ---
 title: "Quisqueya on Sixth Avenue: Dominican Pride and Positive Peace in New York"
 description: "At the 44th National Dominican Day Parade on August 9, 2026, music, heritage and community brought Midtown together. Why ARAC supports cultural celebrations as Positive Peace in action."
-date: 2026-10-29 21:50:00 -0400
+date: 2026-08-13
 category: Diaspora Communities
 author: m-nuri-shakoor
 tags: [national dominican day parade, dominican heritage, quisqueya, sixth avenue, manhattan, diaspora communities, cultural pride, social cohesion, positive peace]
